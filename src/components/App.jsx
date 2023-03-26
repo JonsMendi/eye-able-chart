@@ -1,12 +1,18 @@
-import '../App.css';
-import { useState, useEffect } from 'react';
+import "../App.css";
+import { useState, useEffect } from "react";
+import Chart from "./Chart";
 
 function App() {
   const [population, setPopulation] = useState([]);
   const [yearFilter, setYearFilter] = useState(null);
 
+  /**
+   * Fetch the data from the Api
+   */
   async function fetchPopulation() {
-    const response = await fetch('https://datausa.io/api/data?drilldowns=Nation&measures=Population');
+    const response = await fetch(
+      "https://datausa.io/api/data?drilldowns=Nation&measures=Population"
+    );
     const data = await response.json();
     setPopulation(data.data);
   }
@@ -15,35 +21,28 @@ function App() {
     fetchPopulation();
   }, []);
 
-  function handleYearFilterChange(event) {
-    setYearFilter(parseInt(event.target.value));
+  /**
+   * Filter the population according to the select length of years
+   * @param {*} years 
+   */
+  function handleYearFilterChange(years) {
+    setYearFilter(years);
   }
-
-  const renderPopulation = population
-    .filter(item => yearFilter ? new Date(item.Year).getFullYear() >= (new Date().getFullYear() - yearFilter) : true)
-    .map((item, index) => (
-      <div key={index}>
-        <span>Country: {item.Nation}</span>
-        <span>Population: {item.Population}</span>
-        <span>Year: {item.Year}</span>
-      </div>
-    ));
 
   return (
     <div className="App">
       <h1>USA Population</h1>
-      <label>
-        Filter by year:
-        <select defaultValue="" onChange={handleYearFilterChange}>
-          <option value={null}>All</option>
-          <option value={3}>Last 3 years</option>
-          <option value={5}>Last 5 years</option>
-          <option value={10}>Last 10 years</option>
-        </select>
-      </label>
-      <div>{renderPopulation}</div>
+      <div>
+        <button onClick={() => handleYearFilterChange(null)}>All</button>
+        <button onClick={() => handleYearFilterChange(3)}>Last 3 years</button>
+        <button onClick={() => handleYearFilterChange(5)}>Last 5 years</button>
+        <button onClick={() => handleYearFilterChange(10)}>Last 10 years</button>
+      </div>
+      <Chart data={population} yearFilter={yearFilter} />
     </div>
   );
 }
 
 export default App;
+
+
