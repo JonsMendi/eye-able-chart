@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from '../assets/eye-able-logo.jpeg';
 
+/**
+ * This function renders the header with the Eye-Able logo, description and the access to is own website.
+ */
 function Header() {
   return (
     <header className="flex justify-between items-center bg-black p-4">

@@ -2,6 +2,9 @@ import "../App.css";
 import { useState, useEffect } from "react";
 import Chart from "./Chart/Chart";
 
+/**
+ * This function renders the main body of the app, which displays a chart of the population of the United States over a selected number of years and allows the user to filter the data by year range.
+ */
 function Body() {
   const [population, setPopulation] = useState([]);
   const [yearFilter, setYearFilter] = useState(10);
@@ -45,7 +48,7 @@ function Body() {
   useEffect(() => {
     // Check if there is population data available
     if (population.length > 0) {
-    // Filter the population data based on the selected year filter
+      // Filter the population data based on the selected year filter
       const filteredPopulation = population.filter(
         (item) =>
           !yearFilter ||
@@ -81,8 +84,12 @@ function Body() {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-4xl font-bold text-gray-800 mt-10 main-title">United States of America</h1>
-        <p className="text-lg text-gray-500 font-bold mt-2">Behold the Population Surge!</p>
+        <h1 className="text-4xl font-bold text-gray-800 mt-10 main-title">
+          United States of America
+        </h1>
+        <p className="text-lg text-gray-500 font-bold mt-2">
+          Behold the Population Surge!
+        </p>
       </div>
       <div className="relative flex-grow w-full mt-10">
         <Chart chartData={chartData} />

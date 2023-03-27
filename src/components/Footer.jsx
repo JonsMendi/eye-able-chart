@@ -1,3 +1,6 @@
+/**
+ * This function renders the footer with the autor name and a link to is portfolio website.
+ */
 function Footer() {
   return (
     <footer className="flex justify-center items-center w-full h-16 text-white bg-black">
