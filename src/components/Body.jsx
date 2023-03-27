@@ -15,13 +15,13 @@ function Body() {
         backgroundColor: ["black"],
         borderColor: "gray",
         borderWidth: 2,
-        pointBackgroundColor: "black",
-        pointBorderColor: "#FD7751",
-        pointBorderWidth: 4,
+        pointBackgroundColor: "#FFD050",
+        pointBorderColor: "black",
+        pointBorderWidth: 2,
         pointHoverBackgroundColor: "#FFD866",
         pointHoverBorderColor: "#FFD866",
-        pointHoverRadius: 5,
-        pointRadius: 3,
+        pointHoverRadius: 7,
+        pointRadius: 8,
       },
     ],
   });
@@ -73,11 +73,6 @@ function Body() {
     }
   }, [yearFilter, population]);
 
-  /**
-   * 
-   * @param {*} event 
-   * @param {*} value 
-   */
   // Update the year filter state variable when the user clicks on a filter button
   function handleYearFilterChange(event, value) {
     setYearFilter(parseInt(value));
@@ -85,9 +80,11 @@ function Body() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="relative flex-grow w-full mt-20">
+      <h1 className="text-5xl font-bold text-gray-800 mt-10 main-title">United States of America</h1>
+      <p className="text-lg text-gray-500 font-bold mt-2">Behold the Population Surge!</p>
+      <div className="relative flex-grow w-full mt-10">
         <Chart chartData={chartData} />
-        <div className="flex flex-col items-center justify-center mt-16">
+        <div className="flex flex-col items-center justify-center mt-7">
           <label className="text-lg font-bold mr-2 text-gray-800 mb-5">
             You can filter by years length:
           </label>
@@ -96,9 +93,9 @@ function Body() {
               onClick={(event) => handleYearFilterChange(event, 3)}
               className={`p-2 text-lg rounded-md border-2 ${
                 yearFilter === 3
-                  ? "bg-yellow-500 border-black text-black"
+                  ? "bg-orange-500 border-black text-black"
                   : "bg-white border-black text-black"
-              } hover:bg-yellow-600 hover:transition-colors ease-in-out duration-300`}
+              } hover:bg-orange-400 hover:transition-colors ease-in-out duration-300`}
             >
               Last 3 years
             </button>
@@ -108,7 +105,7 @@ function Body() {
                 yearFilter === 5
                   ? "bg-orange-500 border-black text-black"
                   : "bg-white border-black text-black"
-              } hover:bg-yellow-600 hover:transition-colors ease-in-out duration-300`}
+              } hover:bg-orange-400 hover:transition-colors ease-in-out duration-300`}
             >
               Last 5 years
             </button>
@@ -118,7 +115,7 @@ function Body() {
                 yearFilter === 10
                   ? "bg-orange-500 border-black text-black"
                   : "bg-white border-black text-black"
-              } hover:bg-yellow-600 hover:transition-colors ease-in-out duration-300`}
+              } hover:bg-orange-400 hover:transition-colors ease-in-out duration-300`}
             >
               Last 10 years
             </button>

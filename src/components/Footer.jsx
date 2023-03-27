@@ -4,9 +4,11 @@ function Footer() {
       <p className="text-center bg-black">
         © 2023 João Borges Mendonça. All rights reserved. |{" "}
         <a
-          href="https://www.yourportfolio.com"
+          target="_blank"
+          href="https://jonsmendi.github.io/3d-portfolio-joaobmendonca#present"
           alt="link to João Borges Mendonça portfolio"
           className="underline hover:text-gray-300 bg-black"
+          rel="noreferrer"
         >
           Portfolio
         </a>

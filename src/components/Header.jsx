@@ -15,7 +15,7 @@ function Header() {
           <img src={logo} alt="Logo" className="h-8 mr-2 bg-black" />
         </a>
         <h1 className="text-white font-bold text-lg bg-black">
-          United States of America - Population
+          Eye Able - Challenge
         </h1>
       </div>
     </header>
