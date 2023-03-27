@@ -26,4 +26,4 @@ This app is licensed under the MIT license. See LICENSE.md for more details.
 
 ## Credits
 
-This app was created by [Your Name Here].
+This app was created by [João Borges Mendonça](https://jonsmendi.github.io/3d-portfolio-joaobmendonca/).
