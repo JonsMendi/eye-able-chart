@@ -87,7 +87,7 @@ function Body() {
       <div className="relative flex-grow w-full mt-10">
         <Chart chartData={chartData} />
         <div className="flex flex-col items-center justify-center mt-4 mb-5">
-          <label className="text-lg mr-2 text-gray-800 mt-2 mb-5 uppercase">
+          <label className="mr-2 text-gray-800 mt-2 mb-5 uppercase font-bold">
             You can filter by years length:
           </label>
           <div className="flex justify-center space-x-4">

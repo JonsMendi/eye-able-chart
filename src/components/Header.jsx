@@ -12,7 +12,7 @@ function Header() {
           alt="link to eye-able website"
           rel="noreferrer"
         >
-          <img src={logo} alt="Logo" className="h-8 mr-2 bg-black" />
+          <img src={logo} alt="Eye-Able logo" className="h-8 mr-2 bg-black" />
         </a>
         <h1 className="text-white font-bold text-lg bg-black">
           Eye Able - Challenge
