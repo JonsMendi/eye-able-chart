@@ -80,18 +80,20 @@ function Body() {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <h1 className="text-5xl font-bold text-gray-800 mt-10 main-title">United States of America</h1>
-      <p className="text-lg text-gray-500 font-bold mt-2">Behold the Population Surge!</p>
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="text-4xl font-bold text-gray-800 mt-10 main-title">United States of America</h1>
+        <p className="text-lg text-gray-500 font-bold mt-2">Behold the Population Surge!</p>
+      </div>
       <div className="relative flex-grow w-full mt-10">
         <Chart chartData={chartData} />
-        <div className="flex flex-col items-center justify-center mt-7">
-          <label className="text-lg font-bold mr-2 text-gray-800 mb-5">
+        <div className="flex flex-col items-center justify-center mt-4 mb-5">
+          <label className="text-lg mr-2 text-gray-800 mt-2 mb-5 uppercase">
             You can filter by years length:
           </label>
           <div className="flex justify-center space-x-4">
             <button
               onClick={(event) => handleYearFilterChange(event, 3)}
-              className={`p-2 text-lg rounded-md border-2 ${
+              className={`p-2 rounded-md border-2 ${
                 yearFilter === 3
                   ? "bg-orange-500 border-black text-black"
                   : "bg-white border-black text-black"
@@ -101,7 +103,7 @@ function Body() {
             </button>
             <button
               onClick={(event) => handleYearFilterChange(event, 5)}
-              className={`p-2 text-lg rounded-md border-2 ${
+              className={`p-2 rounded-md border-2 ${
                 yearFilter === 5
                   ? "bg-orange-500 border-black text-black"
                   : "bg-white border-black text-black"
@@ -111,7 +113,7 @@ function Body() {
             </button>
             <button
               onClick={(event) => handleYearFilterChange(event, 10)}
-              className={`p-2 text-lg rounded-md border-2 ${
+              className={`p-2 rounded-md border-2 ${
                 yearFilter === 10
                   ? "bg-orange-500 border-black text-black"
                   : "bg-white border-black text-black"
